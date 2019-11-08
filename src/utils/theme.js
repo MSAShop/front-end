@@ -7,7 +7,7 @@ import {
 	GREY_COLOR,
   SUCCESS_COLOR,
   WARNING_COLOR
-} from './constants';
+} from '@utils/constants';
 
 
 const palette = createPalette({
