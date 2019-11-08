@@ -2,7 +2,9 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { StylesProvider } from '@material-ui/core/styles';
+import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from 'styled-components';
+import theme from '../src/utils/theme';
 
 
 export default class MyApp extends App {
@@ -24,10 +26,14 @@ export default class MyApp extends App {
       <>
         <Head><title>MSA shop</title></Head>
 
-        <StylesProvider injectFirst>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </StylesProvider>
+        <MuiThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
+            <StylesProvider injectFirst>
+              <CssBaseline />
+              <Component {...pageProps} />
+            </StylesProvider>
+          </ThemeProvider>
+        </MuiThemeProvider>
       </>
     );
   }
