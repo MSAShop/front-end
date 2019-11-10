@@ -8,9 +8,11 @@ export default class MyDocument extends Document {
     return (
       <html lang='en' dir='ltr'>
         <Head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Playball&display=swap&subset=latin-ext"
-          rel="stylesheet"/>
+          <link
+            href="https://fonts.googleapis.com/css?family=Playball&display=swap&subset=latin-ext"
+            rel="stylesheet"
+          />
+          <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />

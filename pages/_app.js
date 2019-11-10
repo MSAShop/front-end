@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core/styles';
 
 import theme from '@utils/theme';
+import Layout from '@components/layout';
 
 
 export default class MyApp extends App {
@@ -34,7 +35,9 @@ export default class MyApp extends App {
           <ThemeProvider theme={theme}>
             <StylesProvider injectFirst>
               <CssBaseline />
-              <Component {...pageProps} />
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </StylesProvider>
           </ThemeProvider>
         </MuiThemeProvider>
