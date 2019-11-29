@@ -6,6 +6,7 @@ module.exports = {
       ...config.resolve.alias,
       '@root' : path.join(__dirname, '.'),
       '@utils' : path.join(__dirname, './src/utils'),
+      '@components' : path.join(__dirname, './src/components'),
     }
     
     return config;
