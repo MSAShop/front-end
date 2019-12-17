@@ -25,7 +25,7 @@ const palette = createPalette({
   text: TEXT_COLOR
 });
 
-const shape = { borderRadius: 98 };
+const shape = { borderRadius: 98,  default: 8, square: 0, rounded: 98 };
 const overrides = {
   MuiCssBaseline: { '@global': GLOBAL,  } 
 };
