@@ -28,7 +28,7 @@ const typography = withProp(
       font-style: ${variantInfo.fontStyle};
       text-align: ${align};
       display: ${display};
-      ${noWrap && css`white-space: inherit;`}
+      ${noWrap && css`white-space: nowrap;`}
     `
   }
 );
