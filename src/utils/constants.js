@@ -41,6 +41,26 @@ export const GREY_COLOR = {
   '600': '#333333'
 };
 
+export const COLORS_PATH = {
+  primary: ['primary', 'main'],
+  secondary: ['secondary', 'main'],
+  
+  primary_light: ['primary', 'light'],
+  secondary_light: ['secondary', 'light'],
+  
+  primary_dark: ['primary', 'dark'],
+  secondary_dark: ['secondary', 'dark'],
+
+  white: ['common', 'white'],
+  black: ['common', 'black'],
+
+  text_primary: ['text', 'primary'],
+  text_secondary: ['text', 'secondary'],
+
+  background_paper: ['background', 'paper']
+}
+
+
 
 ////////////////////////////////
 //          FONTS
