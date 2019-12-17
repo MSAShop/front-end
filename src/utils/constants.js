@@ -155,33 +155,33 @@ export const GLOBAL = {
 };
 
 export const TYPOGRAPHY = {
-  fontFamily: ['Montserrat', 'CrimsonText'].join(','),
+  fontFamily: "'Montserrat', 'CrimsonText', 'Sans Serif'",
   h1: {
     fontSize: '5.167rem',
     fontWeight: 'bold'
   },
   h2: {
-    fontSize: '4.333rem',
-    fontWeight: 'bold'
-  },
-  h3: {
     fontSize: '3.5rem',
     fontWeight: 'bold'
   },
-  subtitle1: {
+  h3: {
     fontSize: '1.667rem',
     fontWeight: 200
   },
-  subtitle2: {
+  h4: {
     fontSize: '1.333rem',
     fontWeight: 400
   },
-  body2: {
+  paragraph1: {
+    fontSize: '1.167rem',
+    fontWeight: 'normal'
+  },
+  paragraph2: {
     fontFamily: 'CrimsonText',
     fontSize: '1.333rem',
     fontWeight: 'normal'
   },
-  caption: {
+  paragraph3: {
     fontFamily: 'CrimsonText',
     fontSize: '1.333rem',
     fontWeight: 'normal'
