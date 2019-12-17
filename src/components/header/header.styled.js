@@ -7,7 +7,7 @@ import Text from '@material-ui/core/Typography';
 
 // Main core
 import Card from '@components/card';
-import { getColorInStyle } from '@utils/functions';
+import { getColor } from '@utils/functions';
 
 ///////////////////////////////////////
 
@@ -53,6 +53,6 @@ export const NavbarLinkStyled = styled(Text).attrs(navLinkAttrs)`
   cursor: pointer;
 
   :hover {
-    color: ${getColorInStyle({ name: 'primary.light' })};
+    color: ${getColor('primary_light')};
   }
 `
