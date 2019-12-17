@@ -102,7 +102,7 @@ export const MONTSERRAT_REGULAR_FONT = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 'normal',
+  fontWeight: 400,
   src: `url('/fonts/montserrat/Montserrat-Regular.ttf') format('truetype')`,
 };
 
@@ -110,7 +110,7 @@ export const MONTSERRAT_BLACK_FONT = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 900,
+  fontWeight: 700,
   src: `url('/fonts/montserrat/Montserrat-Black.ttf') format('truetype')`,
 };
 
@@ -118,7 +118,7 @@ export const MONTSERRAT_LIGHT_FONT = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 200,
+  fontWeight: 300,
   src: `url('/fonts/montserrat/Montserrat-Light.ttf') format('truetype')`,
 };
 
@@ -127,7 +127,7 @@ export const CRIMSON_REGULAR_FONT = {
   fontFamily: 'CrimsonText',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 'normal',
+  fontWeight: 400,
   src: `url('/fonts/crimson-text/CrimsonText-Regular.ttf') format('truetype')`,
 };
 
@@ -135,7 +135,7 @@ export const CRIMSON_ITALIC_FONT = {
   fontFamily: 'CrimsonText',
   fontStyle: 'italic',
   fontDisplay: 'swap',
-  fontWeight: 'normal',
+  fontWeight: 400,
   src: `url('/fonts/crimson-text/CrimsonText-Italic.ttf') format('truetype')`,
 };
 
@@ -158,11 +158,11 @@ export const TYPOGRAPHY = {
   fontFamily: "'Montserrat', 'CrimsonText', 'Sans Serif'",
   h1: {
     fontSize: '5.167rem',
-    fontWeight: 'bold'
+    fontWeight: 700
   },
   h2: {
     fontSize: '3.5rem',
-    fontWeight: 'bold'
+    fontWeight: 700
   },
   h3: {
     fontSize: '1.667rem',
@@ -170,21 +170,18 @@ export const TYPOGRAPHY = {
   },
   h4: {
     fontSize: '1.333rem',
-    fontWeight: 400
   },
   paragraph1: {
     fontSize: '1.167rem',
-    fontWeight: 'normal'
   },
   paragraph2: {
     fontFamily: 'CrimsonText',
     fontSize: '1.333rem',
-    fontWeight: 'normal'
   },
   paragraph3: {
     fontFamily: 'CrimsonText',
-    fontSize: '1.333rem',
-    fontWeight: 'normal'
+    fontSize: '1.5rem',
+    fontStyle: 'italic'
   },
   button: {
     fontSize: '0.917rem'
