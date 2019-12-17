@@ -8,7 +8,9 @@ import {
   SUCCESS_COLOR,
   WARNING_COLOR,
   TYPOGRAPHY,
-  GLOBAL
+  GLOBAL,
+  TEXT_COLOR,
+  INFO_COLOR
 } from '@utils/constants';
 
 
@@ -18,7 +20,9 @@ const palette = createPalette({
   error: ERROR_COLOR,
   success: SUCCESS_COLOR,
   warning: WARNING_COLOR,
-  grey: GREY_COLOR
+  info: INFO_COLOR,
+  grey: GREY_COLOR,
+  text: TEXT_COLOR
 });
 
 const shape = { borderRadius: 98 };
