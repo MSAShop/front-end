@@ -3,7 +3,7 @@ import { withProp, prop } from 'styled-tools';
 
 
 // Props
-const properties = {
+export const properties = {
 	m: 'margin',
 	mr: 'margin-right',
 	ml: 'margin-left',
