@@ -6,7 +6,7 @@ import { css } from 'styled-components';
 
 
 // Props
-const props = {
+export const props = {
   borderRadius: 'borderRadius',
   shape: prop('theme.shape', {})
 }

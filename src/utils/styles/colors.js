@@ -9,7 +9,7 @@ import { getColor } from '@utils/functions';
 
 
 // Props
-const props = {
+export const props = {
   color: 'color',
   bg: 'bg',
   palette: prop('theme.palette', {})

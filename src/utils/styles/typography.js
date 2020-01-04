@@ -6,7 +6,7 @@ import { css } from 'styled-components';
 
 
 // Props
-const props = {
+export const props = {
   variant: prop('variant', 'paragraph1'),
   typography: prop('theme.typography', {}),
   align: 'align',
