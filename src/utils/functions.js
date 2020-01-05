@@ -10,8 +10,7 @@ import { COLORS_PATH } from '@utils/constants';
 ///////////////////////////
 
 export const getColor = (name, palette) => {
-  const keys = COLORS_PATH[name];
-  if (!keys) return null;
+  const keys = COLORS_PATH[name] || name;
 
   return palette ?
     getNestedProperty(keys, palette):
