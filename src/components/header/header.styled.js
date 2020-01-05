@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 // Material-ui core
 import Button from '@material-ui/core/Button';
+import Text from '@material-ui/core/Typography';
 
 // Main core
 import Card from '@components/card';
-import { getColorInStyle } from '@utils/functions';
+import { getColor } from '@utils/functions';
 
 ///////////////////////////////////////
 
@@ -15,7 +16,8 @@ export const HeaderWrapperStyled = styled(Card)`
   z-index: 1000;
   min-width: 600px;
   box-shadow: none;
-  font-family: 'Montserrat', sans-serif;
+  padding: 0.8em 0;
+  border-radius: 0;
 `
 
 ///////////////////////////////////////
@@ -42,16 +44,15 @@ const buttonAttrs = () => ({ size: 'small', disableFocusRipple: true });
 export const ButtonStyled = styled(Button).attrs(buttonAttrs)`
   margin-left: 0.8em;
   min-width: 90px;
-  font-family: 'Montserrat', sans-serif;
 `
 
 ///////////////////////////////////////
-
-export const NavbarLinkStyled = styled.a`
+const navLinkAttrs = () => ({ component: 'a' });
+export const NavbarLinkStyled = styled(Text).attrs(navLinkAttrs)`
   margin: 0em 0.8em;
   cursor: pointer;
 
   :hover {
-    color: ${getColorInStyle({ name: 'primary.light' })};
+    color: ${getColor('primary_light')};
   }
 `

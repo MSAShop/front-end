@@ -1,25 +1,20 @@
-///////////////////////////////////////////////////
-// Style with property
-// https://github.com/brunobertolini/styled-by
-///////////////////////////////////////////////////
+// Material-ui styles
+import { lighten, darken } from '@material-ui/core/styles';
 
-export const styledBy = (property, options) => props =>
-  typeof options === 'string'
-    ? (props[property] ? options : null)
-    : options[props[property]]; 
+// Main core
+import { COLORS_PATH } from '@utils/constants';
 
 
 ///////////////////////////
 // GET Color from Palette
 ///////////////////////////
 
-export const getColorInStyle = ({ name='', key='' }) => props => {
-  const colorName = props[key] || name;
-  const keys = colorName.split('.');
-  keys.length === 1 && keys.push('main');
-  const theme = props.theme || props;
+export const getColor = (name, palette) => {
+  const keys = COLORS_PATH[name] || name;
 
-  return getNestedProperty(['palette', ...keys], theme);
+  return palette ?
+    getNestedProperty(keys, palette):
+    props => getNestedProperty(keys, props.theme.palette);
 }
 
 /////////////////////////
@@ -34,3 +29,34 @@ export const getNestedProperty = (arrayKeys, obj) =>
   ? arrayKeys.split('.').reduce(reducer, obj)
   : arrayKeys.reduce(reducer, obj);
 
+
+//////////////////////
+// LIGHTED COLOR
+//////////////////////
+
+export const lightenColor = (color, coefficient) => props => {
+  const hexColor = getColor(color, props.theme.palette) || color; 
+
+  return lighten(hexColor, coefficient);
+}
+
+//////////////////////
+// DARKEN COLOR
+//////////////////////
+
+export const darkenColor = (color, coefficient) => props => {
+  const hexColor = getColor(color, props.theme.palette) || color; 
+  
+  return darken(hexColor, coefficient);
+}
+
+
+//////////////////////
+// FILTER PROPS
+//////////////////////
+export const filterProps = (Component, removeList) => (props => {
+  let newProps = Object.assign({}, props);
+  removeList.map(propName => !!newProps[propName] && delete newProps[propName]);
+
+  return <Component {...newProps} />;
+});
