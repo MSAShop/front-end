@@ -4,14 +4,14 @@ import styled from 'styled-components';
 // Material-ui core
 import InputLabel from '@material-ui/core/InputLabel';
 import { getColor } from '@utils/functions';
+import spacing from '@utils/styles/spacing';
 
-// Main core
-import typography from '@utils/styles/typography';
-import colors from '@utils/styles/colors';
 
 export const CustomLabel = styled(InputLabel)`
-  margin: 0.3em 0;
+  ${spacing};
+  text-transform: uppercase;
   color: ${getColor('grey.400')};
-  ${typography}
-  ${colors};
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: bold;
 `
