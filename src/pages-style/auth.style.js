@@ -20,6 +20,14 @@ export const Form = styled.form`
   .flex-1 {
     flex: 1;
   }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .mt-20 {
+    margin-top: 20px;
+  }
 `
 
 export const Spacer = styled.div`
@@ -44,6 +52,7 @@ export const QuestionText = styled(Text)`
   font-size: 0.8rem;
 
   ${ifProp('link', css`
+      margin-top:20px;
       text-decoration: underline;
       cursor: pointer;
     `, null)
