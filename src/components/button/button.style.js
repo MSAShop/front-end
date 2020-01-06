@@ -23,7 +23,7 @@ const getObjKeys = (list) => {
 const withPropColor = prop =>
 	withProp([prop, 'theme.palette'], (...props) => getColor(props[0], props[1]));
 
-const buttonAttrs = { variant: 'button', borderRadius: 'default' };
+const buttonAttrs = { variant: 'button' };
 const ButtonFilteredProps = filterProps(MuiButtonBase, [
 	...getObjKeys([shapesProps, typoProps, colorsProps]),
 	'outlined'
