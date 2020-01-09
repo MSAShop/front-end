@@ -2,7 +2,7 @@
 import styled, { css } from 'styled-components';
 
 // Styled-tools
-import { prop, ifProp } from 'styled-tools';
+import { ifProp } from 'styled-tools';
 
 // Main Core
 import Text from '@components/text';
@@ -28,11 +28,10 @@ export const Form = styled.form`
   .mt-20 {
     margin-top: 20px;
   }
-`
 
-export const Spacer = styled.div`
-  width: ${prop('width', 20)}px;
-  height: 1px;
+  .mr-20 {
+    margin-right: 20px;
+  }
 `
 
 export const Footer = styled.footer`
@@ -49,12 +48,19 @@ export const Footer = styled.footer`
 
 export const QuestionText = styled(Text)`
   margin: 1em 0em;
-  font-size: 0.8rem;
-
+  
   ${ifProp('link', css`
-      margin-top:20px;
+      margin-top: 2em;
       text-decoration: underline;
       cursor: pointer;
     `, null)
+  }
+`
+
+export const AgreementText = styled(Text)`
+  margin: 40px 20px;
+
+  .underline {
+    text-decoration: underline;
   }
 `
