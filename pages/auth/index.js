@@ -8,13 +8,15 @@ import Link from 'next/link';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 
+// Material-ui core
+import Fade from '@material-ui/core/Fade';
+
 // Main core
 import AuthLayout from '@components/auth-layout';
 import Flex from '@components/common/flex';
 import Label from '@components/label';
 import Input from '@components/input';
 import Button from '@components/button';
-import Fade from '@material-ui/core/Fade';
 
 // Styles
 import * as Styles from '@pages-style/auth.style';
@@ -49,7 +51,7 @@ const LoginForm = () => {
 	return (
 		<Fade in timeout={{ enter }}>
 			<Styles.Form>
-				<Label ml={1.2} mb={0.4}>YOUR E-MAIL</Label>
+				<Label margin>YOUR E-MAIL</Label>
 				<Input
 					borderRadius='rounded'
 					startAdornment={<EmailIcon />}
@@ -57,10 +59,10 @@ const LoginForm = () => {
 					fullWidth
 				/>
 
-				<Label ml={1.2} mb={0.4} mt={2}>PASSWORD</Label>
+				<Label margin className='mt-20'>PASSWORD</Label>
 
 				<Flex>
-					<Flex flex={1}>
+					<Flex flex={1} className='mr-20'>
 						<Input
 							borderRadius='rounded'
 							type='password'
@@ -69,8 +71,6 @@ const LoginForm = () => {
 							fullWidth
 						/>
 					</Flex>
-
-					<Styles.Spacer />
 
 					<Flex flex={1}>
 						<Button
@@ -94,7 +94,7 @@ const RegisterForm = () => {
 	return (
 		<Fade in timeout={{ enter }}>
 			<Styles.Form>
-				<Label ml={1.2} mb={0.4}>YOUR E-MAIL</Label>
+				<Label margin>YOUR E-MAIL</Label>
 				<Input
 					borderRadius='rounded'
 					startAdornment={<EmailIcon />}
@@ -102,7 +102,9 @@ const RegisterForm = () => {
 					fullWidth
 				/>
 
-				<Label ml={1.2} mb={0.4} mt={2}>PASSWORD</Label>
+				<Label margin className='mt-20'>
+					PASSWORD
+				</Label>
 				<Input
 					borderRadius='rounded'
 					type='password'
@@ -111,11 +113,17 @@ const RegisterForm = () => {
 					fullWidth
 				/>
 
+				<Styles.AgreementText align='center'>
+					By creating an account you agree to the <br />
+					<span className='underline'>Terms of Service</span> and{' '}
+					<span className='underline'>Privacy Policy.</span>
+				</Styles.AgreementText>
+
 				<Button
 					bg='primary'
 					color='white'
 					borderRadius='rounded'
-					className='full-width mt-20'
+					className='full-width'
 				>
 					Register
 				</Button>
