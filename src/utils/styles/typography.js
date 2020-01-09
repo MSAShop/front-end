@@ -17,7 +17,7 @@ export const props = {
 const typography = withProp(
   Object.values(props),
   (variant, typography, align, display, noWrap) => {
-    const variantInfo = typography[variant];
+    const variantInfo = typography[variant] || {};
 
     return css`
       font-size: ${variantInfo.fontSize};
