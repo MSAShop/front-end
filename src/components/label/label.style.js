@@ -1,17 +1,17 @@
 // Styled-components
 import styled from 'styled-components';
 
-// Material-ui core
-import InputLabel from '@material-ui/core/InputLabel';
+// Styled-tools
+import { ifProp } from 'styled-tools';
+
+// Main core
 import { getColor } from '@utils/functions';
-import spacing from '@utils/styles/spacing';
+import Text from '@components/text';
 
-
-export const CustomLabel = styled(InputLabel)`
-  ${spacing};
+const labelAttrs = () => ({ variant: 'label'});
+export const CustomLabel = styled(Text).attrs(labelAttrs)`
   text-transform: uppercase;
-  color: ${getColor('grey.400')};
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  font-weight: bold;
+  letter-spacing: 1.2px; 
+  color: ${getColor('grey.300')};
+  margin: ${ifProp('margin', '0.2em 1em', '0.2em 0')};
 `
