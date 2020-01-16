@@ -1,9 +1,5 @@
-////////////////////////////////
-//          FONTS
-////////////////////////////////
-
 // Montserrat
-export const MONTSERRAT_REGULAR_FONT = {
+const montserratRegular = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
@@ -11,7 +7,7 @@ export const MONTSERRAT_REGULAR_FONT = {
   src: `url('/fonts/montserrat/Montserrat-Regular.ttf') format('truetype')`,
 };
 
-export const MONTSERRAT_BLACK_FONT = {
+const montserratBlack = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
@@ -19,7 +15,7 @@ export const MONTSERRAT_BLACK_FONT = {
   src: `url('/fonts/montserrat/Montserrat-Black.ttf') format('truetype')`,
 };
 
-export const MONTSERRAT_LIGHT_FONT = {
+const montserratLight = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
@@ -28,7 +24,7 @@ export const MONTSERRAT_LIGHT_FONT = {
 };
 
 // Crimson-Text
-export const CRIMSON_REGULAR_FONT = {
+const crimsonRegular = {
   fontFamily: 'CrimsonText',
   fontStyle: 'normal',
   fontDisplay: 'swap',
@@ -36,7 +32,7 @@ export const CRIMSON_REGULAR_FONT = {
   src: `url('/fonts/crimson-text/CrimsonText-Regular.ttf') format('truetype')`,
 };
 
-export const CRIMSON_ITALIC_FONT = {
+const crimsonItalic = {
   fontFamily: 'CrimsonText',
   fontStyle: 'italic',
   fontDisplay: 'swap',
@@ -44,22 +40,7 @@ export const CRIMSON_ITALIC_FONT = {
   src: `url('/fonts/crimson-text/CrimsonText-Italic.ttf') format('truetype')`,
 };
 
-
-////////////////////////////////
-//        TYPOGRAPHY
-////////////////////////////////
-
-export const GLOBAL = {
-  '@font-face': [
-    MONTSERRAT_BLACK_FONT,
-    MONTSERRAT_REGULAR_FONT,
-    MONTSERRAT_LIGHT_FONT,
-    CRIMSON_REGULAR_FONT,
-    CRIMSON_ITALIC_FONT
-  ]
-};
-
-export const TYPOGRAPHY = {
+const typography = {
   fontFamily: "'Montserrat', 'CrimsonText', 'Sans Serif'",
   h1: {
     fontSize: '4.209rem',
@@ -71,22 +52,30 @@ export const TYPOGRAPHY = {
   },
   h3: {
     fontSize: '2.369rem',
-    fontWeight: 900
+    fontWeight: 700
   },
   h4: {
     fontSize: '1.777rem',
-    fontWeight: 900
+    fontWeight: 700
+  },
+  h5: {
+    fontSize: '1.2rem',
+    fontWeight: 700
+  },
+  h6: {
+    fontSize: '0.98rem',
+    fontWeight: 700
   },
   paragraph1: {
-    fontSize: '1rem',
+    fontSize: '0.78rem',
   },
   paragraph2: {
     fontFamily: 'CrimsonText',
-    fontSize: '1.08rem',
+    fontSize: '0.87rem',
   },
   paragraph3: {
     fontFamily: 'CrimsonText',
-    fontSize: '1.2rem',
+    fontSize: '0.87rem',
     fontStyle: 'italic'
   },
   label: {
@@ -97,3 +86,15 @@ export const TYPOGRAPHY = {
     fontSize: '0.87rem'
   }
 }
+
+// ---------------------------------------
+
+export const fontFace = [
+  montserratRegular,
+  montserratBlack,
+  montserratLight,
+  crimsonRegular,
+  crimsonItalic
+]
+
+export default typography;
