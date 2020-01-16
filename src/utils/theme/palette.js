@@ -38,19 +38,19 @@ const infoColor = {
 
 const textColor = {
   primary: '#222328',
-  secondary: '#3ad05b',
+  secondary: '#3A405B',
   hint: '#a1a6bb',
   disabled: '#b9bed1'
 }
 
 
 const greyColor = {
-  '100': '#FAFAFA',
-  '200': '#E5E5E5',
-  '300': '#CCCCCC',
-  '400': '#999999',
-  '500': '#666666',
-  '600': '#333333'
+  '100': '#F0F2F7',
+  '200': '#E4E7EF',
+  '300': '#B9BED1',
+  '400': '#A1A6BB',
+  '500': '#3A405B',
+  '600': '#222328'
 };
 
 const palette = createPalette({
