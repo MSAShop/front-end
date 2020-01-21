@@ -10,7 +10,7 @@ import { getColor, lightenColor } from '@utils/functions';
 export const LayoutWrapper = styled(Flex)`
   height: 100vh;
   background-color: ${getColor('background.default')};
-  background: url('/images/background/auth-background.jpg') no-repeat;
+  background: url('https://source.unsplash.com/Gviz3cFSf_Y/1024x768') no-repeat;
   background-size: cover;
 `
 
