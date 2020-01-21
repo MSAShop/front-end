@@ -9,12 +9,12 @@ import { COLORS_PATH } from '@utils/constants';
 // GET Color from Palette
 ///////////////////////////
 
-export const getColor = (name, palette) => {
+export const getColor = (name, theme) => {
   const keys = COLORS_PATH[name];
   if (!keys) return null;
 
-  return palette ?
-    getNestedProperty(keys, palette):
+  return theme ?
+    getNestedProperty(keys, theme.palette):
     props => getNestedProperty(keys, props.theme.palette);
 }
 
@@ -36,7 +36,7 @@ export const getNestedProperty = (arrayKeys, obj) =>
 //////////////////////
 
 export const lightenColor = (color, coefficient) => props => {
-  const hexColor = getColor(color, props.theme.palette) || color; 
+  const hexColor = getColor(color, props.theme) || color; 
 
   return lighten(hexColor, coefficient);
 }
@@ -46,7 +46,7 @@ export const lightenColor = (color, coefficient) => props => {
 //////////////////////
 
 export const darkenColor = (color, coefficient) => props => {
-  const hexColor = getColor(color, props.theme.palette) || color; 
+  const hexColor = getColor(color, props.theme) || color; 
   
   return darken(hexColor, coefficient);
 }
