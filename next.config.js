@@ -7,7 +7,6 @@ module.exports = {
       '@root' : path.join(__dirname, '.'),
       '@utils' : path.join(__dirname, './src/utils'),
       '@components' : path.join(__dirname, './src/components'),
-      '@pages-style' : path.join(__dirname, './src/pages-style'),
     }
     
     return config;

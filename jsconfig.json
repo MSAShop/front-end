@@ -5,7 +5,6 @@
     "paths": {
       "@utils/*": ["./src/utils/*"],
       "@components/*": ["./src/components/*"],
-      "@pages-style/*": ["./src/pages-style/*"],
       "@root/*": ["./*"]
     }
   }

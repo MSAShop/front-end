@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core/styles';
 
 import theme from '@utils/theme';
+import Layout from '@components/layout';
 
 
 export default class MyApp extends App {
@@ -25,8 +26,7 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    Component.Layout = Component.Layout || Fragment;
-    
+
     return (
       <>
         <Head><title>MSA shop</title></Head>
@@ -35,9 +35,9 @@ export default class MyApp extends App {
           <ThemeProvider theme={theme}>
             <StylesProvider injectFirst>
               <CssBaseline />
-              <Component.Layout>
+              <Layout>
                 <Component {...pageProps} />
-              </Component.Layout>
+              </Layout>
             </StylesProvider>
           </ThemeProvider>
         </MuiThemeProvider>
