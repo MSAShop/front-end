@@ -17,14 +17,10 @@ const FilteredInput = filterProps(OutlinedInput, [...Object.keys(shapesProps), '
 
 export const CustomInput = styled(FilteredInput).attrs(inputAttrs)`
   ${shapes}
-  background-color: ${getColor('grey.100')};
-  border: 1px solid ${getColor('grey.200')};
+  background-color: ${getColor('grey.200')};
+  border: 1px solid ${getColor('grey.300')};
   transition: box-shadow 0.3s ease-in;
   padding: 0.3em 1.2em;
-  
-  input {
-    letter-spacing: 0.08em;
-  }
   
   &.focused {
     ${ifProp(p => p.success || p.error, null, css`border-width: 0;`)}
