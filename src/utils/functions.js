@@ -1,5 +1,16 @@
 import { COLORS_PATH } from '@utils/constants';
 
+///////////////////////////////////////////////////
+// Style with property
+// https://github.com/brunobertolini/styled-by
+///////////////////////////////////////////////////
+
+export const styledBy = (property, options) => props =>
+  typeof options === 'string'
+    ? (props[property] ? options : null)
+    : options[props[property]]; 
+
+
 ///////////////////////////
 // GET Color from Palette
 ///////////////////////////
