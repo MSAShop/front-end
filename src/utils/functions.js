@@ -50,14 +50,3 @@ export const darkenColor = (color, coefficient) => props => {
   
   return darken(hexColor, coefficient);
 }
-
-
-//////////////////////
-// FILTER PROPS
-//////////////////////
-export const filterProps = (Component, removeList) => (props => {
-  let newProps = Object.assign({}, props);
-  removeList.map(propName => !!newProps[propName] && delete newProps[propName]);
-
-  return <Component {...newProps} />;
-});
