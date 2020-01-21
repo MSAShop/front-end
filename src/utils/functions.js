@@ -2,7 +2,7 @@
 import { lighten, darken } from '@material-ui/core/styles';
 
 // Main core
-import { colorsPath } from '@utils/theme/palette';
+import { COLORS_PATH } from '@utils/constants';
 
 
 ///////////////////////////
@@ -10,7 +10,7 @@ import { colorsPath } from '@utils/theme/palette';
 ///////////////////////////
 
 export const getColor = (name, palette) => {
-  const keys = colorsPath[name] || name;
+  const keys = COLORS_PATH[name] || name;
 
   if (!keys) return null;
   
