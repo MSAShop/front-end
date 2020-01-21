@@ -5,9 +5,10 @@ import { createMuiTheme } from '@material-ui/core';
 import palette from './palette';
 import typography from './typography';
 import overrides from './override-material-styles';
-import shape from './shape';
 
 // ---------------------------------------------
+
+const shape = { borderRadius: 98,  default: 8, square: 0, rounded: 98 };
 
 const theme = createMuiTheme({ palette, shape, overrides, typography });
 
