@@ -102,7 +102,7 @@ export const MONTSERRAT_REGULAR_FONT = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 400,
+  fontWeight: 'normal',
   src: `url('/fonts/montserrat/Montserrat-Regular.ttf') format('truetype')`,
 };
 
@@ -110,7 +110,7 @@ export const MONTSERRAT_BLACK_FONT = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 700,
+  fontWeight: 900,
   src: `url('/fonts/montserrat/Montserrat-Black.ttf') format('truetype')`,
 };
 
@@ -118,7 +118,7 @@ export const MONTSERRAT_LIGHT_FONT = {
   fontFamily: 'Montserrat',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 300,
+  fontWeight: 200,
   src: `url('/fonts/montserrat/Montserrat-Light.ttf') format('truetype')`,
 };
 
@@ -127,7 +127,7 @@ export const CRIMSON_REGULAR_FONT = {
   fontFamily: 'CrimsonText',
   fontStyle: 'normal',
   fontDisplay: 'swap',
-  fontWeight: 400,
+  fontWeight: 'normal',
   src: `url('/fonts/crimson-text/CrimsonText-Regular.ttf') format('truetype')`,
 };
 
@@ -135,7 +135,7 @@ export const CRIMSON_ITALIC_FONT = {
   fontFamily: 'CrimsonText',
   fontStyle: 'italic',
   fontDisplay: 'swap',
-  fontWeight: 400,
+  fontWeight: 'normal',
   src: `url('/fonts/crimson-text/CrimsonText-Italic.ttf') format('truetype')`,
 };
 
@@ -158,11 +158,11 @@ export const TYPOGRAPHY = {
   fontFamily: "'Montserrat', 'CrimsonText', 'Sans Serif'",
   h1: {
     fontSize: '5.167rem',
-    fontWeight: 700
+    fontWeight: 'bold'
   },
   h2: {
     fontSize: '3.5rem',
-    fontWeight: 700
+    fontWeight: 'bold'
   },
   h3: {
     fontSize: '1.667rem',
@@ -170,18 +170,21 @@ export const TYPOGRAPHY = {
   },
   h4: {
     fontSize: '1.333rem',
+    fontWeight: 400
   },
   paragraph1: {
     fontSize: '1.167rem',
+    fontWeight: 'normal'
   },
   paragraph2: {
     fontFamily: 'CrimsonText',
     fontSize: '1.333rem',
+    fontWeight: 'normal'
   },
   paragraph3: {
     fontFamily: 'CrimsonText',
-    fontSize: '1.5rem',
-    fontStyle: 'italic'
+    fontSize: '1.333rem',
+    fontWeight: 'normal'
   },
   button: {
     fontSize: '0.917rem'
