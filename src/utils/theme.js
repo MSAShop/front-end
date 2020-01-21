@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 import createPalette from "@material-ui/core/styles/createPalette";
 import {
 	PRIMARY_COLOR,
@@ -6,9 +6,7 @@ import {
 	ERROR_COLOR,
 	GREY_COLOR,
   SUCCESS_COLOR,
-  WARNING_COLOR,
-  TYPOGRAPHY,
-  GLOBAL
+  WARNING_COLOR
 } from '@utils/constants';
 
 
@@ -22,12 +20,6 @@ const palette = createPalette({
 });
 
 const shape = { borderRadius: 98 };
-const overrides = {
-  MuiCssBaseline: { '@global': GLOBAL,  } 
-};
 
-const typography = TYPOGRAPHY;
-
-const theme = createMuiTheme({ palette, shape, overrides, typography });
-
-export default theme;
+const theme = createMuiTheme({ palette, shape });
+export default responsiveFontSizes(theme);
