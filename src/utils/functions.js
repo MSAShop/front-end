@@ -1,5 +1,3 @@
-import { COLORS_PATH } from '@utils/constants';
-
 ///////////////////////////////////////////////////
 // Style with property
 // https://github.com/brunobertolini/styled-by
@@ -15,13 +13,13 @@ export const styledBy = (property, options) => props =>
 // GET Color from Palette
 ///////////////////////////
 
-export const getColor = (name, theme) => {
-  const keys = COLORS_PATH[name];
-  if (!keys) return null;
+export const getColorInStyle = ({ name='', key='' }) => props => {
+  const colorName = props[key] || name;
+  const keys = colorName.split('.');
+  keys.length === 1 && keys.push('main');
+  const theme = props.theme || props;
 
-  return theme ?
-    getNestedProperty(keys, theme.palette):
-    props => getNestedProperty(keys, props.theme.palette);
+  return getNestedProperty(['palette', ...keys], theme);
 }
 
 /////////////////////////
