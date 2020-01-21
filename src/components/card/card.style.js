@@ -1,5 +1,5 @@
 // Styled-components
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Main core
 import { getColor, lightenColor } from '@root/src/utils/functions';

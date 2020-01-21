@@ -9,15 +9,10 @@ import Grid from '@material-ui/core/Grid';
 
 //Main core
 import Flex from '@components/common/flex';
+import Layout from '@components/layout';
 
 // Styles
-import {
-	ProductsTitleStyled,
-	ProductImageStyled,
-	ProductNameStyled,
-	ProductPriceStyled,
-	ProductWrapperStyled
-} from '@pages-style/index-style';
+import * as Styles from '@pages-style/index-style';
 
 // Custom hooks
 const useProducts = () => {
@@ -46,11 +41,11 @@ const useProducts = () => {
 const Product = ({ info }) => {
 
   return (
-    <ProductWrapperStyled disablePadding as={Flex} flexDirection='column'>
-      <ProductImageStyled src={info.imgUrl} alt={info.name}/>
-      <ProductNameStyled>{info.name}</ProductNameStyled>
-      <ProductPriceStyled>${info.price}</ProductPriceStyled>
-    </ProductWrapperStyled>
+    <Styles.ProductWrapper disablePadding as={Flex} flexDirection='column'>
+      <Styles.ProductImage src={info.imgUrl} alt={info.name}/>
+      <Styles.ProductText variant='h6' align='center'>{info.name}</Styles.ProductText>
+      <Styles.ProductText variant='h6' as='span' color='grey.500'>$&nbsp;{info.price}</Styles.ProductText>
+    </Styles.ProductWrapper>
   )
 }
 
@@ -73,10 +68,12 @@ const Products = () => {
 const Home = () => {  
   return (
     <>
-      <ProductsTitleStyled>All Products</ProductsTitleStyled>
+      <Styles.ProductsTitle variant='h3'>All Products</Styles.ProductsTitle>
       <Products />
     </>
   )
 }
+
+Home.Layout = Layout;
 
 export default Home;
