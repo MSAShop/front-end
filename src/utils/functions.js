@@ -1,9 +1,4 @@
-// Material-ui styles
-import { lighten, darken } from '@material-ui/core/styles';
-
-// Main core
 import { COLORS_PATH } from '@utils/constants';
-
 
 ///////////////////////////
 // GET Color from Palette
@@ -30,23 +25,3 @@ export const getNestedProperty = (arrayKeys, obj) =>
   ? arrayKeys.split('.').reduce(reducer, obj)
   : arrayKeys.reduce(reducer, obj);
 
-
-//////////////////////
-// LIGHTED COLOR
-//////////////////////
-
-export const lightenColor = (color, coefficient) => props => {
-  const hexColor = getColor(color, props.theme) || color; 
-
-  return lighten(hexColor, coefficient);
-}
-
-//////////////////////
-// DARKEN COLOR
-//////////////////////
-
-export const darkenColor = (color, coefficient) => props => {
-  const hexColor = getColor(color, props.theme) || color; 
-  
-  return darken(hexColor, coefficient);
-}
