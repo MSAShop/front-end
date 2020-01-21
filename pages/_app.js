@@ -2,13 +2,9 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from 'styled-components';
-import {
-	StylesProvider,
-	ThemeProvider as MuiThemeProvider
-} from '@material-ui/core/styles';
-
-import theme from '@utils/theme';
+import theme from '../src/utils/theme';
 
 
 export default class MyApp extends App {
