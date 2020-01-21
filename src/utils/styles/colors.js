@@ -1,10 +1,7 @@
-// Styled-tools
 import { withProp, prop } from 'styled-tools';
 
 // Styled-components
 import { css } from 'styled-components';
-
-// Main core
 import { getColor } from '@utils/functions';
 
 
