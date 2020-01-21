@@ -1,17 +1,12 @@
-// Material-ui core
 import Container from '@material-ui/core/Container';
-
-// Main core
 import Header from '@components/header';
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        {children}
-      </Container>
-    </>
+      {children}
+    </Container>
   )
 }
 
