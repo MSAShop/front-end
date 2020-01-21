@@ -32,20 +32,6 @@ export const WARNING_COLOR = {
   dark: '#c79100'
 }
 
-export const INFO_COLOR = {
-  light: '#8cffff',
-  main: '#51dde9',
-  dark: '#32cdda'
-}
-
-export const TEXT_COLOR = {
-  primary: '#222328',
-  secondary: '#3ad05b',
-  hint: '#a1a6bb',
-  disabled: '#b9bed1'
-}
-
-
 export const GREY_COLOR = {
   '100': '#FAFAFA',
   '200': '#E5E5E5',
@@ -57,36 +43,19 @@ export const GREY_COLOR = {
 
 export const COLORS_PATH = {
   primary: ['primary', 'main'],
-  primary_light: ['primary', 'light'],
-  primary_dark: ['primary', 'dark'],
-
   secondary: ['secondary', 'main'],
+  
+  primary_light: ['primary', 'light'],
   secondary_light: ['secondary', 'light'],
+  
+  primary_dark: ['primary', 'dark'],
   secondary_dark: ['secondary', 'dark'],
-  
-  error: ['error', 'main'],
-  error_light: ['error', 'light'],
-  error_dark: ['error', 'dark'],
-  
-  success: ['success', 'main'],
-  success_light: ['success', 'light'],
-  success_dark: ['success', 'dark'],
-  
-  warning: ['warning', 'main'],
-  warning_light: ['warning', 'light'],
-  warning_dark: ['warning', 'dark'],
-  
-  info: ['info', 'main'],
-  info_light: ['info', 'light'],
-  info_dark: ['info', 'dark'],
-  
+
   white: ['common', 'white'],
   black: ['common', 'black'],
 
   text_primary: ['text', 'primary'],
   text_secondary: ['text', 'secondary'],
-  text_hint: ['text', 'hint'],
-  text_disabled: ['text', 'disabled'],
 
   background_paper: ['background', 'paper']
 }
