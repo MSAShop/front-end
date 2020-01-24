@@ -8,14 +8,14 @@ COPY qemu-${ARCH}-static /usr/bin
 
 LABEL maintainer="Mohammad Moradi <mohammad.moradi9375@gmail.com>"
 
-RUN apk add --update --no-cache npm curl python make g++
+RUN apk add --update --no-cache npm curl
 
 WORKDIR /usr/src/msashop-front
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm install
 ENV NODE_ENV=production
 COPY . .
 RUN npm run build
 
-EXPOSE 443
+EXPOSE 3000
 CMD ["npm", "start"]
