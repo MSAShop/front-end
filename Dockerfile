@@ -8,7 +8,7 @@ COPY qemu-${ARCH}-static /usr/bin
 
 LABEL maintainer="Mohammad Moradi <mohammad.moradi9375@gmail.com>"
 
-RUN apk add --update --no-cache npm curl
+RUN apk add --update --no-cache npm curl python
 
 WORKDIR /usr/src/msashop-front
 COPY package*.json ./
