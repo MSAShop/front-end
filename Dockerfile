@@ -14,8 +14,8 @@ WORKDIR /usr/src/msashop-front
 COPY package*.json ./
 RUN npm ci --only=production
 ENV NODE_ENV=production
-RUN npm run build
 COPY . .
+RUN npm run build
 
 EXPOSE 443
 CMD ["npm", "start"]
