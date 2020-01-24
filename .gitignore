@@ -1,11 +1,11 @@
 # dependencies
-node_modules
+/node_modules
 
 # production
-out
-build
-.next
-.next-export
+/out
+/build
+/.next
+/.next-export
 
 # VS Code
 .vscode/*
