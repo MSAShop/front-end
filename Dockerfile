@@ -22,12 +22,11 @@ LABEL maintainer="Mohammad Moradi <mohammad.moradi9375@gmail.com>"
 
 RUN apk add --update --no-cache nodejs curl
 
-WORKDIR /usr/src/msashop-front
+WORKDIR /usr/src/msashop_front-end
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/next.config.js ./next.config.js
 
 EXPOSE 3000
-ENV NODE_ENV=production
 CMD ["node_modules/.bin/next", "start"]
