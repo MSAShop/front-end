@@ -1,7 +1,6 @@
 FROM alpine:3 AS builder
 WORKDIR /app
 COPY ./ ./
-ENV NODE_ENV=production
 RUN apk add --update --no-cache \
     npm \
     python \
@@ -18,6 +17,7 @@ FROM ${BASE_IMAGE_PREFIX}alpine:3
 # see hooks/post_checkout
 ARG ARCH
 COPY qemu-${ARCH}-static /usr/bin
+
 LABEL maintainer="Mohammad Moradi <mohammad.moradi9375@gmail.com>"
 
 RUN apk add --update --no-cache nodejs curl
