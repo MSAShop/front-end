@@ -1,15 +1,3 @@
-FROM alpine:3 AS builder
-WORKDIR /app
-COPY ./ ./
-RUN apk add --update --no-cache \
-    npm \
-    python \
-    make \
-    g++ \
-    && npm ci --only=production \
-    && npm run build
-
-
 # see hooks/build and hooks/.config
 ARG BASE_IMAGE_PREFIX
 FROM ${BASE_IMAGE_PREFIX}alpine:3
@@ -20,13 +8,12 @@ COPY qemu-${ARCH}-static /usr/bin
 
 LABEL maintainer="Mohammad Moradi <mohammad.moradi9375@gmail.com>"
 
-RUN apk add --update --no-cache nodejs curl
+RUN apk add --update --no-cache npm curl
 
 WORKDIR /usr/src/msashop_front-end
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/next.config.js ./next.config.js
+COPY . .
+RUN npm install \
+    && npm run build
 
 EXPOSE 3000
-CMD ["node_modules/.bin/next", "start"]
+CMD ["npm", "start"]
