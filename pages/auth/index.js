@@ -1,9 +1,3 @@
-// React.js
-import { useState } from 'react';
-
-// Next.js
-import Link from 'next/link';
-
 // Material-ui icons
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
@@ -17,6 +11,7 @@ import Flex from '@components/common/flex';
 import Label from '@components/label';
 import Input from '@components/input';
 import Button from '@components/button';
+import { Link } from '@services/routes';
 
 // Styles
 import * as Styles from '@pages-style/auth.style';
@@ -136,7 +131,7 @@ const ForgotPassword = () => {
 
 	return (
 		<Flex justifyContent='center'>
-			<Link href='#'>
+			<Link route ='#'>
 				<Styles.QuestionText link as='a' align='center'>
 					Forget Password?
 				</Styles.QuestionText>
@@ -150,45 +145,45 @@ const ForgotPassword = () => {
 //         Footers
 /////////////////////////////////
 
-const LoginFooter = ({ changePage }) => {
-	const handleClick = () => changePage({ ...PAGES.register });
+const LoginFooter = () => {
 
 	return (
 		<Fade in timeout={{ enter }}>
 			<Styles.Footer>
 				<Styles.QuestionText color='grey.500'>Don't have an account?</Styles.QuestionText>
 
-				<Button
-					bg='primary'
-					color='white'
-					borderRadius='rounded'
-					className='btn-padding'
-					onClick={handleClick}
-				>
-					SING UP FOR FREE
-				</Button>
+				<Link route='auth' params={{ page: PAGES.register.key }}>
+					<Button
+						bg='primary'
+						color='white'
+						borderRadius='rounded'
+						className='btn-padding'
+					>
+						SING UP FOR FREE
+					</Button>
+				</Link>
 			</Styles.Footer>
 		</Fade>
 	);
 }
 
-const RegisterFooter = ({ changePage }) => {
-	const handleClick = () => changePage({ ...PAGES.login });
+const RegisterFooter = () => {
 
 	return (
 		<Fade in timeout={{ enter }}>
 			<Styles.Footer>
 				<Styles.QuestionText color='grey.500'>have an account?</Styles.QuestionText>
 
-				<Button
-					bg='info'
-					color='white'
-					borderRadius='rounded'
-					className='btn-padding'
-					onClick={handleClick}
-				>
-					SIGN IN
-				</Button>
+				<Link route='auth' params={{ page: PAGES.login.key }}>
+					<Button
+						bg='info'
+						color='white'
+						borderRadius='rounded'
+						className='btn-padding'
+					>
+						SIGN IN
+					</Button>
+				</Link>
 			</Styles.Footer>
 		</Fade>
 	);
@@ -198,10 +193,12 @@ const RegisterFooter = ({ changePage }) => {
 /////////////////////////////////
 //         Main Page
 /////////////////////////////////
-const Auth = () => {
-	const [page, setPage] = useState(PAGES.login);
+const Auth = ({ query }) => {
+	const page = PAGES[query.page] || PAGES.login;
 	const [Form, Footer] =
-		page.key === PAGES.login.key ? [LoginForm, LoginFooter] : [RegisterForm, RegisterFooter];
+    page.key === PAGES.login.key
+      ? [LoginForm, LoginFooter]
+			: [RegisterForm, RegisterFooter];
 
   return (
 		<>
@@ -209,11 +206,12 @@ const Auth = () => {
 
 			<Form />
 			
-			<Footer changePage={setPage}/>
+			<Footer />
 
 		</>
 	);
 }
 
+Auth.getInitialProps = async ({ query }) => ({ query });
 Auth.Layout = AuthLayout;
 export default Auth;
