@@ -8,8 +8,10 @@ module.exports = {
       '@utils' : path.join(__dirname, './src/utils'),
       '@components' : path.join(__dirname, './src/components'),
       '@pages-style' : path.join(__dirname, './src/pages-style'),
+      '@services' : path.join(__dirname, './src/services'),
     }
     
     return config;
-  }
+  },
+  useFileSystemPublicRoutes: false
 };
