@@ -1,4 +1,7 @@
 const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
   webpack (config, options) {
@@ -13,5 +16,8 @@ module.exports = {
     
     return config;
   },
-  useFileSystemPublicRoutes: false
+  useFileSystemPublicRoutes: false,
+  env: {
+    TRADESK_URL: process.env.TRADESK_URL
+  }
 };

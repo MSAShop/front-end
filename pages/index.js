@@ -1,9 +1,3 @@
-// React core
-import { useState, useEffect } from 'react';
-
-// Axios 
-import Axios from 'axios';
-
 // Material-ui core
 import Grid from '@material-ui/core/Grid';
 
@@ -11,31 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import Flex from '@components/common/flex';
 import Layout from '@components/layout';
 
+import product from '@services/api/product';
+
 // Styles
 import * as Styles from '@pages-style/index-style';
 
-// Custom hooks
-const useProducts = () => {
-  const [products, setProducts] = useState([]);
-  
-  const getAllProducts = async () => {
-    try {
-      // TODO: Change url with original api
-      const allProducts = await Axios.get('https://my-json-server.typicode.com/MohammadMRD/Fake-data/products');
-      setProducts(allProducts.data);
-    } catch (ex) {
-      // TODO: Show Error message to user
-      console.log(ex);
-    }
-  }
-
-  useEffect(() => {
-    getAllProducts();
-  }, [])
-
-  // TODO: Add `Loading` and `Error` state
-  return products;
-}
 
 // Components 
 const Product = ({ info }) => {
@@ -50,12 +24,13 @@ const Product = ({ info }) => {
 }
 
 const Products = () => {
-  const products = useProducts();
+  // TODO: Design error and loading state
+  const [products, error, loading] = product.getAll();
 
   return (
     <Grid container spacing={4}>
       {
-        products.map(product => (
+        products && products.map(product => (
           <Grid item md={3} key={product.id}>
             <Product info={product} />
           </Grid>
