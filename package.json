@@ -26,7 +26,7 @@
     "next": "^9.2.1",
     "next-routes": "^1.4.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.0",
     "styled-components": "^4.4.1",
     "styled-tools": "^1.7.1"
   },
